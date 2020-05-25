@@ -1,4 +1,4 @@
-$primary-color: #444;
+$primary-color: #666;
 $secondary-color: #d32489;
 $show-home-image: true;
 $home-image: url(../img/iot-roundup-future-of-internet.jpg);
@@ -32,6 +32,16 @@ ALSO, note that if we're using :after then we must include content:""; inside it
     }
 }
 
+
+//Set Text color
+@function set-text-color($color){
+    @if(lightness($color) > 40){
+        @return #000;
+    }
+    @else{
+        @return #cff;
+    }
+}
 
 //Media Query Mixins
 

@@ -11,7 +11,7 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #fff;
+        background: set-text-color($primary-color);
         @include easeOut;
     }
 
@@ -71,7 +71,7 @@
         margin: 0;
         padding: 0;
         // background: darken($primary-color, 3);
-        background: rgba(darken($primary-color, 5), 0.8);
+        background: rgba(darken($primary-color, 5), 0.9);
         list-style: none;
         transform: translate3d(0, -100%, 0);
         @include easeOut;
@@ -85,7 +85,7 @@
     &-branding {
 
         // background: $primary-color;
-        background: rgba($primary-color, 0.8);
+        background: rgba($primary-color, 0.9);
         transform: translate3d(0, 100%, 0);
         @include easeOut;
 
@@ -104,32 +104,33 @@
         }
     }
 
-    .nav-item{
-        transform: translate3d(600px,0,0);
+    .nav-item {
+        transform: translate3d(600px, 0, 0);
         @include easeOut;
 
-        &.show{
+        &.show {
             //Slide in from right
-            transform: translate3d(0,0,0);
+            transform: translate3d(0, 0, 0);
         }
 
-        &.current > a{
+        &.current>a {
             color: $secondary-color;
         }
     }
 
-    .nav-link{
+    .nav-link {
         display: inline-block;
         position: relative;
         font-size: 30px;
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 200;
-        color: #cff;
+        color: set-text-color($primary-color);
+        ;
         text-decoration: none;
         @include easeOut;
 
-        &:hover{
+        &:hover {
             color: $secondary-color;
         }
     }
@@ -139,7 +140,7 @@
 
 //DELAY For Each nav Item slide by 0.1s
 @for $x from 1 through 4 {
-    .nav-item:nth-child(#{$x}){
+    .nav-item:nth-child(#{$x}) {
         transition-delay: $x *0.1s;
     }
 }

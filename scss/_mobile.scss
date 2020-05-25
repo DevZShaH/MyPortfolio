@@ -22,6 +22,11 @@
         width: 100%;
         min-height: 0;
 
+        //added extra two properties for landscape mode.
+        // min-height: 130px;
+        // line-height: 0.75;
+
+
         &.show {
             transform: translate3d(0, 0, 0);
         }
@@ -34,14 +39,27 @@
     }
 
     .menu-branding {
-        height: 25vh;
+        // height: 25vh;
+        height: auto;
         transform: translate3d(100%, 0, 0);
 
         .portrait {
+            background: url('../img/portrait.jpg');
             width: 100px;
             height: 100px;
             background-size: cover;
         }
+    }
+
+    .about-info{
+        grid-template-areas: 
+        'bioimage'
+        'bio'
+        'job1'
+        'job2'
+        'job3';
+
+        grid-template-columns: 1fr;
     }
 
 }
@@ -51,4 +69,22 @@
     main#home h1 {
         margin-top: 10vh;
     }
+
+    // .menu-nav {
+    //     height: 75vh;
+    //     transform: translate3d(-100%, 0, 0);
+    //     // font-size: 16px;
+    // }
+
+    // .menu-branding {
+    //     height: 25vh;
+    //     transform: translate3d(100%, 0, 0);
+
+    //     .portrait {
+    // background: url('../img/portrait.jpg');
+    //         width: 60px;
+    //         height: 60px;
+    //         background-size: cover;
+    //     }
+    // }
 }
