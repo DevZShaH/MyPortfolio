@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to my Portfolio</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://kit.fontawesome.com/ab7ebf8779.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+        <title>Welcome to my Portfolio</title>
 </head>
 <body id="bg-img">
     <header>
-        <div class="menu-btn">
-            <div class="btn-line"></div>
+        <div class="menu-btn" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-easing="ease" data-aos-offset="0" data-aos-duration="2000">
+            <div class="btn-line" ></div>
             <div class="btn-line"></div>
             <div class="btn-line"></div>
         </div>
@@ -36,36 +37,48 @@
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">
-                        How To Reach Me
+                        Reach Out To Me
                     </a>
                 </li>
             </ul>
         </nav>
     </header>
 
-    <main id="home">
-        <h1 class="lg-heading">
-            Dev <span class="text-secondary">Sah</span>
-        </h1>
-        <h2 class="sm-heading">
-            MERN Stack Developer, Full Stack Developer & Programmer
-        </h2>
-        <div class="icons">
-            <a href="#!">
-                <i class="fab fa-instagram fa-2x"></i>
-            </a>
-            <a href="#!">
-                <i class="fab fa-facebook fa-2x"></i>
-            </a>
-            <a href="#!">
-                <i class="fab fa-linkedin fa-2x"></i>
-            </a>
-            <a href="#!">
-                <i class="fab fa-github fa-2x"></i>
-            </a>
-        </div>
-    </main>
-    
+        <main id="home">
+            <img src="img/myLogo.png" class="myLogo" alt="LOGO" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-offset="0" data-aos-duration="1500">
+            <h1 class="lg-heading devz">Dev Sah</h1>
+            <h2 class="sm-heading">
+                <span class="txt-typer" data-wait="2000"
+                    data-words='["MERN Stack Developer","Full Stack Developer","Web Designer","Programmer"]'></span>
+            </h2>
+            <div class="cv-hireme">
+                <a href="https://drive.google.com/drive/folders/1-YcAGE3obVInu1xZvV5rRMS4zCX7mSbt" target="_blank" class="my-resume" data-aos="zoom-in-down" data-aos-delay="1800" data-aos-offset="0">DOWNLOAD CV</a>
+                <!-- <a href="#" class="hireme">HIRE ME</a> -->
+            </div>
+            <div class="icons">
+                <a href="https://github.com/DevZShaH?tab=repositories" target="_blank" data-aos="fade-down-right" data-aos-delay="600" data-aos-offset="0">
+                    <i class="fab fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dev-sah-466565147/" target="_blank" data-aos="fade-up" data-aos-delay="1250" data-aos-offset="0">
+                    <i class="fab fa-linkedin fa-2x"></i>
+                </a>
+                <a href="https://www.instagram.com/devz_shah/?hl=en" target="_blank" data-aos="fade-up" data-aos-delay="1500" data-aos-offset="0">
+                    <i class="fab fa-instagram fa-2x"></i>
+                </a>
+                <a href="https://www.facebook.com/devz.shah.1/" target="_blank"  data-aos="fade-down-left" data-aos-delay="1000" data-aos-offset="0">
+                    <i class="fab fa-facebook fa-2x"></i>
+                </a>
+            </div>
+        </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+                duration: 1200, // values from 0 to 3000, with step 50ms
+                easing: 'ease',
+                anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
+            });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html>

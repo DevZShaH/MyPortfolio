@@ -1,208 +1,833 @@
-@import 'config';
-@import 'menu';
-
+@import '_config';
+@import '_menu';
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body {
-    @include background;
-    background: $primary-color;
-    color: set-text-color($primary-color);
-    height: 100%;
-    margin: 0;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    line-height: 1.5;
+	@include background;
+	background: $primary-color;
+	color: set-text-color($primary-color);
+	height: 100%;
+	margin: 0;
+	font-family: 'IBM Plex Sans', sans-serif;
+	line-height: 1.5;
 }
 
+// =============ANIMATIONS==========================
+
+@keyframes animating {
+	0% {
+		background: -webkit-linear-gradient(90deg, #380238, #ddd, hsl(199, 75%, 25%), crimson);
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-size: 400%;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px linear);
+	}
+
+	25% {
+		background: -webkit-linear-gradient(90deg, #061f70, #f441a5, #380238, #0677ac);
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-size: 400%;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px linear);
+	}
+
+	50% {
+		background: -webkit-linear-gradient(90deg, #ddd, #380238, #097eb4, #fc3a74);
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-size: 400%;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px linear);
+	}
+
+	100% {
+		background: -webkit-linear-gradient(90deg, #134157, rgb(99, 21, 189), #dd363e, #380238);
+		-webkit-background-clip: text;
+		background-clip: text;
+		background-size: 400%;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px linear);
+	}
+}
+
+@keyframes animate {
+	0% {
+		background-position: 0%;
+	}
+
+	100% {
+		background-position: 400%;
+	}
+}
+
+// =============ANIMATIONS=========================
 //Headings
 h1,
 h2,
 h3 {
-    margin: 0;
-    font-weight: 400;
+	margin: 0;
+	padding: 0;
+	font-weight: 300;
 
-    &.lg-heading {
-        font-size: 6rem;
-    }
+	&.lg-heading {
+		font-size: 5rem;
+		// newly added css
+		// font-weight: normal;
+		padding-top: 3rem;
+		padding-left: 1rem;
+		text-shadow: 0 19px 38px rgba(161, 127, 127, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+		background: -webkit-linear-gradient(90deg, #ddd, #380238, hsl(199, 96%, 40%), crimson);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		filter: drop-shadow(2px 2px linear);
+		transition: ease-in-out 1000ms;
 
-    &.sm-heading {
-        margin-bottom: 2rem;
-        padding: 0.2rem 1rem;
-        background: rgba(lighten($primary-color, 2), 0.5);
-    }
+		&:hover {
+			transform: scale(1.1);
+			background: -webkit-linear-gradient(270deg, #380238, #49063e, #42aada, rgb(99, 8, 28));
+			-webkit-background-clip: text;
+			background-clip: text;
+			background-size: 100%;
+			-webkit-text-fill-color: transparent;
+			filter: drop-shadow(5px 5px linear);
+		}
+	}
+
+	&.sm-heading {
+		margin-bottom: 2rem;
+		// padding: 0.2rem 1rem;
+		font-weight: normal;
+		text-shadow: 0 19px 38px rgba(161, 127, 127, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22); // text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+
+		/* ======================CURSOR FOR TYPEWRITER EFFECT================================================= */
+		.txt-typer > .txt {
+			border-right: 0.15rem solid #777;
+		}
+
+		.txt-typer {
+			display: block;
+		}
+	}
 }
 
 a {
-    color: #cff;
-    text-decoration: none;
+	color: rgb(59, 5, 57);
+	text-decoration: none;
 }
 
 header {
-    position: fixed;
-    z-index: 2;
-    width: 100%;
+	position: fixed;
+	z-index: 2;
+	width: 100%;
 }
 
 .text-secondary {
-    color: $secondary-color;
+	color: $secondary-color;
 }
 
+// HOME PAGE
 main {
-    padding: 4rem;
-    // height: 100%;
-    min-height: calc(100vh - 60px);
+	padding: 1rem;
+	min-height: calc(100vh - 60px); // z-index: 1;
 
-    .icons {
-        margin-top: 1rem;
+	//START of Newly Added div for each page main heading
+	.page-heading-h1 {
+		margin: 0;
+		padding: 0;
+	}
 
-        a {
-            padding: 0.4rem;
+	//END of Newly Added div for each page main heading
 
-            &:hover {
-                color: $secondary-color;
-                @include easeOut();
-            }
-        }
-    }
+	// NEWLY added class
+	.myLogo {
+		height: 7rem;
+		width: 7rem;
+		margin-bottom: 0rem;
+		padding-bottom: 0rem;
+		line-height: 0.5;
+	}
 
-    &#home {
-        overflow: hidden;
+	.cv-hireme {
+		margin: 0;
+		padding: 0;
+		display: grid;
+		grid-template-columns: repeat(1, 1fr);
+		justify-content: center;
+		text-align: center;
 
-        h1 {
-            margin-top: 20vh;
-        }
-    }
+		.my-resume,
+		.hireme {
+			color: #fff;
+			font-size: 1rem;
+			margin: auto;
+			padding: 0.5rem 1rem;
+			outline: none;
+			border: none;
+			border-radius: 2rem;
+			background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+			background-size: 400%;
+
+			&:hover {
+				box-shadow: 0 0 10px #03a9f4, 0 0 40px #f441a5, 0 0 80px #03a9f4; // Interchanging the colour position here will give different hover effects color
+				animation: animate 8s infinite linear;
+			}
+		}
+	}
+
+	.icons {
+		margin-top: 2rem;
+		// adding extra css from here
+		display: flex;
+		justify-content: center;
+
+		a {
+			padding: 0.4rem;
+			transition: 1s;
+			margin: 0rem 0.2rem;
+			// NEWLY ADDED CSS===================================
+			font-size: 1.35rem;
+			background: -webkit-linear-gradient(270deg, #380238, #ddd, #03a9f4, #ffeb3b);
+			-webkit-background-clip: text;
+			background-clip: text;
+			background-size: 400%;
+			-webkit-text-fill-color: transparent;
+			filter: drop-shadow(5px 5px linear);
+
+			i {
+				&:hover {
+					transform: scale(1.2);
+					@include easeOut();
+					animation: animating 4s linear infinite;
+				}
+			}
+		}
+	}
+
+	&#home {
+		overflow: hidden;
+		// new added css
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		h1 {
+			// margin-top: 20vh;
+			margin-top: 0rem; // NEWLY ADDED CSS
+
+			/* ANIMATION 1 */
+			span {
+				opacity: 0;
+				transition: all .5s ease-in-out;
+			}
+
+			span.fade {
+				opacity: 1;
+				color: $secondary-color;
+
+				.text-secondary {
+					color: $secondary-color;
+				}
+			}
+		}
+	}
 }
 
+// NEW ADDED CODE FOR ABOUT ME=================================================
+
+// About Me Page
+
+#about {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+// =========NEWLY ADDED CODE FOR ABOUT ME PAGE ABOVE THIS LINE================================================================================================================
+// About Me
 .about-info {
-    display: grid;
-    grid-gap: 30px;
-    grid-template-areas:
-        'bioimage bio bio'
-        'job1 job2 job3';
-    grid-template-columns: repeat(3, 1fr);
+	display: grid;
+	grid-gap: 2rem;
+	grid-template-areas: 'bioimage bio';
+	grid-template-columns: repeat(1, 1fr);
+	max-width: 60%;
+	margin: 6rem 0;
 
+	.bio-image {
+		grid-area: bioimage;
+		margin: auto;
+		float: right;
+		border-radius: 50%;
+		width: 14rem;
+		height: 14rem;
+		box-shadow: 0 0 10px #04567c, 0 0 15px rgb(142, 103, 214), 0 0 30px #380238;
+	}
 
-    .bio-image {
-        grid-area: bioimage;
-        margin: auto;
-        border-radius: 50%;
-        border: $secondary-color 3px solid;
-        width: 150px;
-        height: 150px;
-    }
-
-    .bio {
-        grid-area: bio;
-        font-size: 1.5rem;
-    }
-
-    .job-1 {
-        grid-area: job1;
-    }
-
-    .job-2 {
-        grid-area: job2;
-    }
-
-    .job-3 {
-        grid-area: job3;
-    }
-
-    .job {
-        background: lighten($color: $primary-color, $amount: 5);
-        border-bottom: $secondary-color 5px solid;
-        padding: 0.5rem;
-    }
-
+	.bio {
+		grid-area: bio;
+		font-size: 1.5rem;
+		margin: auto;
+	}
 }
 
-//Work Projects
+// ========================================NEWLY ADDED CSS FOR MY SKILLS CONATINER===================================
+.container {
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	margin-bottom: 3rem;
+	max-width: 80%;
+	// padding: 1.5rem;
+	text-align: center;
+	align-content: center;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	background: rgba(255, 255, 255, 0.4);
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 1);
 
+	h3 {
+		font-size: 1.7rem;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		color: $secondary-color;
+		padding-top: 2rem;
+	}
+
+	.skill-icons {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		// width: 100%;
+		margin: 0;
+		padding: 0;
+		align-content: center;
+		justify-content: center;
+		align-items: center;
+
+		.logo-with-name {
+			display: block;
+			margin: 1.5rem;
+			padding: 0.75rem 2rem;
+			padding-bottom: 0.25rem;
+
+			&:hover {
+				background: rgba(255, 255, 255, 0.02);
+				box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		.logo-img {
+			width: 7.5rem;
+			height: 7.5rem;
+			transition: 500ms ease-in-out;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+
+		.logo-name {
+			font-size: 1rem;
+			padding: 0.4rem 0.8rem;
+			background: linear-gradient(lightblue, crimson);
+			margin: 0.8rem auto;
+			transition: 500ms ease-in-out;
+			border-radius: 2rem;
+			text-transform: uppercase;
+			letter-spacing: .1rem;
+
+			&:hover {
+				transform: scale(1.1);
+			}
+		}
+	}
+}
+
+// ==============================================END OF MY SKILLS CONTAINER==================================================
+// =============================================START OF MY CARD HOVER EFFECTS==================================================
+.card-container {
+	// max-width: 100%; // width: 100%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	align-content: center;
+	margin: auto;
+	margin-bottom: 3rem;
+
+	h3 {
+		padding-top: 2rem;
+		font-size: 1.7rem;
+		margin-bottom: 1rem;
+		text-transform: uppercase;
+		color: $secondary-color;
+	}
+
+	.cards-boxes {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: center;
+
+		.box {
+			position: relative;
+			width: 18rem;
+			height: 25rem;
+			background: #000;
+			box-shadow: 0 30px 30px rgba(0, 0, 0, 0.5);
+			margin: 2rem;
+			transition: 1000ms ease-in-out;
+
+			&::after {
+				content: '';
+				border-bottom: 0.4rem solid teal;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				border-radius: 2px;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.box .imgBx {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.box .imgBx img {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: 0.6s;
+}
+
+.box:hover .imgBx img {
+	opacity: 0;
+	transform: scale(1.1);
+}
+
+.box .content {
+	position: absolute;
+	bottom: 1.25rem;
+	left: 10%;
+	height: 2rem;
+	width: 80%;
+	background: linear-gradient(rgb(93, 214, 255), pink);
+	overflow: hidden;
+	transition: 0.5s;
+	padding: 0.3rem;
+	box-sizing: border-box;
+	opacity: 0.7;
+	border-radius: 3.5rem;
+}
+
+.box:hover .content {
+	width: 100%;
+	height: 100%;
+	bottom: 0;
+	left: 0;
+	opacity: 1;
+	border-radius: 0px;
+}
+
+.box .content h3 {
+	margin: 0;
+	padding: 0;
+	font-size: 1.1rem;
+	font-weight: bold;
+	text-align: center;
+	color: black;
+}
+
+.box .content p {
+	margin: 1rem 0 0;
+	padding: 0.3rem;
+
+	opacity: 0;
+	line-height: 1.35rem;
+	transition: 0.5s;
+	text-align: justify;
+}
+
+.box:hover .content p {
+	opacity: 1;
+	transition-delay: 0.3s;
+}
+
+// =========================================END OF MY CARD HOVER EFFECTS==============================================
+// ======================================START OF MY ABILITIES SECTION==============================================
+.abilities {
+	// max-width: 960px;
+	max-width: 100%;
+	margin: auto;
+	padding: 2rem 1rem;
+	// NEWLY ADDED CSS
+	background: #222;
+	color: $primary-color;
+	margin-bottom: 0;
+
+	h4 {
+		color: $primary-color;
+		font-weight: normal;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		padding: 0 0 3rem 0;
+	}
+
+	h3 {
+		padding: 1rem 0;
+	}
+
+	.grid-3 {
+		display: grid;
+		grid-gap: 20px;
+		grid-template-columns: repeat(3, 1fr);
+
+		div {
+			border-bottom: 1px dashed $primary-color;
+		}
+	}
+
+	.center {
+		margin: auto;
+		text-align: center;
+	}
+}
+
+// ========================================END OF MY ABILITIES SECTION==============================================
+// My Work Page
+#work {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+
+	h2:nth-child(4) {
+		margin-top: 2rem; // Using nth-child property to manually giving margin to only one h2 element.
+	}
+
+	h2 {
+		i {
+			margin: 0.5rem;
+			color: red;
+			background: -webkit-linear-gradient(270deg, #ddd, #03a9f4, #380238, teal);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			filter: drop-shadow(5px 5px linear);
+
+			&:hover {
+				transform: scale(1.1);
+				@include easeOut();
+				animation: animating 4s linear infinite;
+			}
+		}
+	}
+}
+
+// =========NEWLY ADDED CODE FOR MY WORK PAGE ABOVE THIS LINE================================================================================================================
+// Work Projects
 .projects {
-    display: grid;
-    grid-gap: 0.7rem;
-    grid-template-columns: repeat(3, 1fr);
+	display: grid;
+	grid-gap: 0.9rem;
+	grid-template-columns: repeat(3, 1fr);
 
-    img {
-        width: 100%;
-        border: 3px solid #cff;
-        align-content: center;
+	.item {
+		position: relative;
+		overflow: hidden; //
 
-        &:hover {
-            opacity: 0.7;
-            border-color: $secondary-color;
-            @include easeOut;
-        }
+		&:hover {
+			.work-details {
+				transform: scaleY(1);
+			}
+		}
 
-    }
+		&:hover {
+			img {
+				border: $secondary-color;
+				@include easeOut;
+				transform: scale(1.25);
+			}
+		}
+
+		a {
+			position: relative;
+
+			img {
+				width: 100%;
+				border: 3px solid #cff;
+				align-content: center;
+				transition: 1s;
+			}
+		}
+
+		.work-details {
+			position: absolute;
+			top: 0.6rem;
+			left: 0.6rem;
+			right: 0.6rem;
+			bottom: 6.2rem;
+			background: rgba(255, 255, 255, 0.9);
+			transform: scaleY(0);
+			transition: transform 500ms;
+			display: flex;
+			flex-wrap: wrap;
+			align-content: center;
+			align-items: center;
+			justify-content: center;
+
+			.work-text-content {
+				position: absolute;
+				text-align: center;
+
+				h4 {
+					margin: 0;
+					padding: 0;
+					font-size: 1rem;
+					font-weight: bolder;
+					background: -webkit-linear-gradient(90deg, #ddd, #380238, hsl(199, 96%, 40%), crimson);
+					-webkit-background-clip: text;
+					background-clip: text;
+					background-size: 200%;
+					-webkit-text-fill-color: transparent;
+					filter: drop-shadow(5px 5px linear);
+				}
+
+				h5 {
+					margin: 0;
+					padding: 0;
+					font-size: 1rem;
+					color: black;
+				}
+			}
+		}
+	}
 }
 
-//Contact Page
+// Contact Page
+#contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-content: center;
+}
+
+// NEWLY ADDED CSS ABOVE THIS LINE========================================================================================
 .boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-evenly;
+	text-align: center;
+	align-items: center;
+	margin-top: 1rem;
 
-    div {
-        font-size: 2rem;
-        border: 3px #cff solid;
-        padding: 1rem 2.5rem;
-        margin-top: 1rem;
-        @include easeOut;
+	div {
+		font-size: 1.3rem;
+		border: 2px $secondary-color solid;
+		padding: 0.5rem 1.5rem;
+		margin: .75rem;
 
-        &:hover {
-            padding: 0.5rem 1.5rem;
-            background: $secondary-color;
-            color: set-text-color($primary-color);
+		border-radius: 2rem;
+		@include easeOut();
+		transition: 500ms;
 
-            span {
-                color: set-text-color($primary-color);
-            }
+		&:hover {
+			transform: scale(1.05);
+			background: rgba(255, 255, 255, 0.2);
+			overflow: hidden;
+			color: set-text-color($primary-color);
+			letter-spacing: .1rem;
 
-        }
-
-    }
-
+			span {
+				color: $secondary-color;
+			}
+		}
+	}
 }
 
+// NEWLY ADDED CSS =========================================================================================
+.contact-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	align-content: center;
+	padding: 2rem;
+	margin: 3rem auto;
+	width: 90%;
+	box-shadow: 0 15px 25px rgba(0, 0, 0, 0.8);
+	position: relative;
 
-//Button Styles
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		background: url(../img/form-image.jpg);
+		background-repeat: no-repeat;
+		z-index: -1;
+		opacity: 0.8;
+		background-size: cover;
+		filter: blur(4px);
+		-webkit-filter: blur(4px);
+		transition: all 1000ms;
+	}
+
+	&:hover::after {
+		filter: blur(0px);
+	}
+
+	form {
+		width: auto;
+		padding-top: 8rem;
+		padding-bottom: 8rem;
+		.fields {
+			display: block;
+
+			.field {
+				margin: 1rem;
+				height: 2.5rem;
+
+				#name,
+				#email {
+					width: 100%;
+					font-size: 1rem;
+					padding: 0.4rem 1rem;
+					border: 1px $secondary-color solid;
+					letter-spacing: 0.15rem;
+					outline: none;
+					border-radius: 2rem;
+					margin-bottom: 1rem;
+					background: rgba($color: rgb(241, 232, 232), $alpha: 0.9);
+					transition: 0.5s ease;
+
+					&:hover {
+						transform: scale(1.1);
+					}
+				}
+
+				#message {
+					margin: 0;
+					width: 100%;
+					font-size: 1.4rem;
+					padding: 0.25rem 1rem;
+					border: 1px $secondary-color solid;
+					letter-spacing: 0.1rem;
+					outline: none;
+					background: rgba($color: rgb(241, 232, 232), $alpha: 0.95);
+					transition: ease 500ms;
+
+					&:hover {
+						transform: scaleX(1.1);
+					}
+				}
+			}
+
+			.add-file {
+				margin-top: 8rem;
+				padding: 0;
+				margin-bottom: 0rem;
+
+				#myfile {
+					font-size: 1.2rem;
+					padding: 0;
+					width: 100%;
+					cursor: pointer;
+					outline: none;
+				}
+			}
+		}
+
+		.actions {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+
+			.button {
+				width: 100%;
+				color: #fff;
+				font-size: 1.3rem;
+				margin-top: 2rem;
+				padding: 0.25rem 1rem;
+				outline: none;
+				border: none;
+				border-radius: 2rem;
+				background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
+				background-size: 400%;
+
+				&:hover {
+					box-shadow: 0 0 10px #03a9f4, 0 0 40px #f441a5, 0 0 80px #03a9f4; // Interchanging the colour position here will give different hover effects color
+					animation: animate 8s linear infinite;
+				}
+			}
+		}
+	}
+}
+
+// END OF NEWLY ADDED CSS ===================================================================================
+// Button Styles
+
 .btn {
-    display: block;
-    // display: inline-block;
-    padding: 0.5rem 1rem;
-    border: 0;
-    margin-bottom: 0.3rem;
+	display: block;
+	padding: 0.5rem 1rem;
+	border: 0;
+	margin-bottom: 0.3rem;
 
-    &:hover {
-        background: $secondary-color;
-        color: set-text-color($secondary-color);
-    }
+	&:hover {
+		background: $secondary-color;
+		color: set-text-color($secondary-color);
+	}
 }
 
 .btn-light {
-    @extend .btn;
-    background: lighten($color: $primary-color, $amount: 50);
-    color: #222;
+	@extend .btn;
+	background: lighten($color: $primary-color, $amount: 50);
+	color: #222;
+	letter-spacing: .1rem;
 }
 
 .btn-dark {
-    @extend .btn;
-    background: darken($color: $primary-color, $amount: 50);
-    color: #cff;
+	@extend .btn;
+	background: darken($color: $primary-color, $amount: 50);
+	color: #fff;
+	letter-spacing: .1rem;
 }
 
 #main-footer {
-    text-align: center;
-    padding: 1rem;
-    background: darken($color: $primary-color, $amount: 10);
-    color: set-text-color($primary-color);
-    height: 60px;
+	text-align: center;
+	padding: 1rem;
+	background: darken($color: $primary-color, $amount: 10);
+	color: set-text-color($primary-color);
+	height: 4rem;
+	font-size: 1.1rem;
 }
 
 @import 'mobile';

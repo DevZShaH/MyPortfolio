@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View My Work</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://kit.fontawesome.com/ab7ebf8779.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
+    <title>View My Work</title>
+
 </head>
 
 <body>
     <header>
-        <div class="menu-btn">
+        <div class="menu-btn" data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-easing="ease" data-aos-offset="0" data-aos-duration="2000">
             <div class="btn-line"></div>
             <div class="btn-line"></div>
             <div class="btn-line"></div>
@@ -38,7 +40,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">
-                        How To Reach Me
+                        Reach Out To Me
                     </a>
                 </li>
             </ul>
@@ -46,64 +48,169 @@
     </header>
 
     <main id="work">
-        <h1 class="lg-heading">
-            My <span class="text-secondary">Work</span>
-        </h1>
-        <h2 class="sm-heading">
+        <div class="page-heading-h1" data-aos="fade-down" data-aos-offset="0">
+            <h1 class="lg-heading">My Work</h1>
+        </div>
+        <h2 class="sm-heading" data-aos="fade-up" data-aos-delay="500" data-aos-offset="0">
             Check out some of my projects...
         </h2>
         <div class="projects">
-            <div class="item">
-                <a href="#!">
-                    <img src="img/projects/GitHub-Background.jpg" alt="Project">
-                </a>
-                <a href="#" class="btn-light">
-                    <i class="fas fa-eye"></i> Project
-                </a>
-                <a href="#" class="btn-dark">
-                    <i class="fab fa-github"></i> Github
-                </a>
-            </div>
-            <div class="item">
+            <div class="item" data-aos="fade-right" data-aos-offset="0">
                 <a href="#!">
                     <img src="img/projects/github-logo.jpeg" alt="Project">
                 </a>
-                <a href="#" class="btn-light">
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>FULL STACK PROJECT</h4>
+                        <h5>e-STORE</h5>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="https://favourite-artist-shop.herokuapp.com/" target="_blank" class="btn-light" data-aos-offset="0" data-aos="fade-left" data-aos-delay="300">
                     <i class="fas fa-eye"></i> Project
                 </a>
-                <a href="#" class="btn-dark">
+                <a href="https://github.com/DevZShaH/FavouriteArtistStore" target="_blank" class="btn-dark" data-aos-offset="0" data-aos="fade-right" data-aos-delay="500">
                     <i class="fab fa-github"></i> Github
                 </a>
             </div>
-            <div class="item">
+            <div class="item" data-aos="fade-left" data-aos-offset="0">
                 <a href="#!">
                     <img src="img/projects/GitHub-Background.jpg" alt="Project">
                 </a>
-                <a href="#" class="btn-light">
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>MERN STACK PROJECT</h4>
+                        <h5>BUDGET TRACKER</h5>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="https://mybudget-track.herokuapp.com/" target="_blank" class="btn-light" data-aos-offset="0" data-aos="fade-left" data-aos-delay="300">
                     <i class="fas fa-eye"></i> Project
                 </a>
-                <a href="#" class="btn-dark">
+                <a href="https://github.com/DevZShaH/MyBudgetTracker" target="_blank" class="btn-dark" data-aos-offset="0" data-aos="fade-right" data-aos-delay="500">
                     <i class="fab fa-github"></i> Github
                 </a>
             </div>
-            <div class="item">
+            <div class="item" data-aos="fade-right" data-aos-offset="0">
                 <a href="#!">
                     <img src="img/projects/github-logo.jpeg" alt="Project">
                 </a>
-                <a href="#" class="btn-light">
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>REACT PROJECT</h4>
+                        <h5>CORONA UPDATES</h5>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="https://coronaupdateslive.netlify.app/" target="_blank" class="btn-light" data-aos-offset="0" data-aos="fade-left" data-aos-delay="300">
                     <i class="fas fa-eye"></i> Project
                 </a>
-                <a href="#" class="btn-dark">
+                <a href="https://github.com/DevZShaH/LiveCoronaUpdates" target="_blank" data-aos-offset="0" class="btn-dark" data-aos="fade-right" data-aos-delay="500">
+                    <i class="fab fa-github"></i> Github
+                </a>
+            </div>
+            <div class="item" data-aos="fade-left" data-aos-offset="0">
+                <a href="#!" >
+                    <img src="img/projects/GitHub-Background.jpg" alt="Project">
+                </a>
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>FULL STACK PROJECT</h4>
+                        <h5>LOGIN FORM</h5>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="https://login-form-backend-auth.herokuapp.com/" target="_blank" class="btn-light" data-aos-offset="0" data-aos="fade-left" data-aos-delay="300">
+                    <i class="fas fa-eye"></i> Project
+                </a>
+                <a href="https://github.com/DevZShaH/LoginSignupFormBackend" target="_blank" class="btn-dark" data-aos-offset="0" data-aos="fade-right" data-aos-delay="500">
+                    <i class="fab fa-github"></i> Github
+                </a>
+            </div>
+            <div class="item" data-aos="fade-right" data-aos-offset="0">
+                <a href="#!">
+                    <img src="img/projects/github-logo.jpeg" alt="Project">
+                </a>
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>MODERN WEB DESIGN</h4>
+                        <h5>MY PORTFOLIO</h5>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="#!" class="btn-light my-portfolio-link-btn" data-aos="fade-left"
+                    data-aos-delay="300" data-aos-offset="0">
+                    <i class="fas fa-eye"></i> Project
+                </a>
+                <a href="https://github.com/DevZShaH/MyPortfolio" target="_blank" class="btn-dark" data-aos-offset="0" data-aos="fade-right"
+                    data-aos-delay="500">
+                    <i class="fab fa-github"></i> Github
+                </a>
+            </div>
+            <div class="item" data-aos="fade-left" data-aos-offset="0">
+                <a href="#!">
+                    <img src="img/projects/GitHub-Background.jpg" alt="Project">
+                </a>
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>VANILLA JAVASCRIPT</h4>
+                        <h5>BUDGETIFY APP</h5>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="https://mybudgetify.netlify.app/" target="_blank" data-aos-offset="0" class="btn-light" data-aos="fade-left"
+                    data-aos-delay="300">
+                    <i class="fas fa-eye"></i> Project
+                </a>
+                <a href="https://github.com/DevZShaH/BudgetifyApp" target="_blank" data-aos-offset="0" class="btn-dark" data-aos="fade-right"
+                    data-aos-delay="500">
+                    <i class="fab fa-github"></i> Github
+                </a>
+            </div>
+            <div class="item" data-aos="fade-right" data-aos-offset="0">
+                <a href="#!">
+                    <img src="img/projects/github-logo.jpeg" alt="Project">
+                </a>
+                <!-- NEWLY ADDED details div -->
+                <div class="work-details">
+                    <div class="work-text-content">
+                        <h4>DYNAMIC LANDING PAGE</h4>
+                    </div>
+                </div>
+                <!-- END OF details div -->
+                <a href="https://quirky-wiles-213778.netlify.app/" target="_blank" data-aos-offset="0" class="btn-light" data-aos="fade-left"
+                    data-aos-delay="300">
+                    <i class="fas fa-eye"></i> Project
+                </a>
+                <a href="https://github.com/DevZShaH/DynamicWelcomePage" target="_blank" data-aos-offset="0" class="btn-dark" data-aos="fade-right"
+                    data-aos-delay="500">
                     <i class="fab fa-github"></i> Github
                 </a>
             </div>
         </div>
+        <h2 class="sm-heading" data-aos="zoom-in" data-aos-delay="600" data-aos-offset="0">
+            View more projects at <a href="https://github.com/DevZShaH?tab=repositories" target="_blank"><i class="fab fa-github fa-2x"></i></a>
+        </h2>
     </main>
     <footer id="main-footer">
-        Copyright &copy; 2020
+        &copy; <span class="span-year">span Year</span>. All Rights Reserved.
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200, // values from 0 to 3000, with step 50ms
+            easing: 'ease',
+            anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
+        });
+    </script>
+    <script src="js/work.js"></script>
 </body>
 
 </html>

@@ -1,106 +1,188 @@
 //WideScreens
 @include mediaXl {
-    .projects {
-        grid-template-columns: repeat(4, 1fr);
-    }
+	.projects {
+		grid-template-columns: repeat(4, 1fr);
+	}
 }
 
 //Desktops and Laptops
 @include mediaLg {
-    .projects {
-        grid-template-columns: repeat(3, 1fr);
-    }
+	.about-info {
+		max-width: 80%;
+	}
+
+	.container {
+		max-width: 90%;
+	}
+
+	.projects {
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
 
 //Tablets and Small Laptops
 @include mediaMd {
-    main {
-        align-items: center;
-        text-align: center;
+	main {
+		align-items: center;
+		text-align: center;
 
-        .lg-heading {
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-    }
+		.lg-heading {
+			line-height: 1;
+			margin-bottom: 1rem;
+		}
+	}
 
-    ul.menu-nav,
-    div.menu-branding {
-        float: none;
-        width: 100%;
-        min-height: 0;
+	ul.menu-nav,
+	div.menu-branding {
+		float: none;
+		width: 100%;
+		min-height: 0;
 
-        //added extra two properties for landscape mode.
-        // min-height: 130px;
-        // line-height: 0.75;
+		&.show {
+			transform: translate3d(0, 0, 0);
+		}
+	}
 
+	.menu-nav {
+		height: 78vh;
+		transform: translate3d(-100%, 0, 0);
+	}
 
-        &.show {
-            transform: translate3d(0, 0, 0);
-        }
-    }
+	.menu-branding {
+		height: auto;
+		padding: 1rem;
+		transform: translate3d(100%, 0, 0);
 
-    .menu-nav {
-        height: 75vh;
-        transform: translate3d(-100%, 0, 0);
-        // font-size: 16px;
-    }
+		.portrait {
+			background: url('../img/portrait.jpg');
+			width: 12rem;
+			height: 12rem;
+			background-size: cover;
+		}
+	}
 
-    .menu-branding {
-        // height: 25vh;
-        height: auto;
-        transform: translate3d(100%, 0, 0);
+	.about-info {
+		grid-template-areas: 'bioimage''bio';
 
-        .portrait {
-            background: url('../img/portrait.jpg');
-            width: 100px;
-            height: 100px;
-            background-size: cover;
-        }
-    }
+		grid-template-columns: 1fr;
+		max-width: 90%;
+		margin-bottom: 1rem;
+	}
 
-    .about-info {
-        grid-template-areas:
-            'bioimage'
-            'bio'
-            'job1'
-            'job2'
-            'job3';
-
-        grid-template-columns: 1fr;
-    }
-
-    .projects {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
+	.projects {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 //SmallScreens like Mobile Phones
 @include mediaSm {
-    main#home h1 {
-        margin-top: 10vh;
-    }
+	main#home h1,
+	main#work h1,
+	main#about h1,
+	main#contact h1 {
+		font-size: 4rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+	}
 
-    .projects {
-        grid-template-columns: repeat(1, 1fr);
-    }
+	.projects {
+		grid-template-columns: repeat(1, 1fr);
+	}
 
-    // .menu-nav {
-    //     height: 75vh;
-    //     transform: translate3d(-100%, 0, 0);
-    //     // font-size: 16px;
-    // }
+	.about-info {
+		max-width: 90%;
+	}
 
-    // .menu-branding {
-    //     height: 25vh;
-    //     transform: translate3d(100%, 0, 0);
+	.container {
+		max-width: 90%;
+		padding: 0.02rem;
 
-    //     .portrait {
-    // background: url('../img/portrait.jpg');
-    //         width: 60px;
-    //         height: 60px;
-    //         background-size: cover;
-    //     }
-    // }
+		.logo-with-name {
+			margin: 0.2rem;
+			padding: 0.2rem 0.25rem;
+			padding-bottom: 0.25rem;
+		}
+	}
+
+	.abilities {
+		max-width: 100%;
+		margin-left: 0rem;
+		margin-right: 0rem;
+		padding-left: 0rem;
+		padding-right: 0rem;
+
+		.grid-3 {
+			grid-template-columns: repeat(2, 1fr);
+
+			div {
+				border-bottom: 1px dashed $primary-color;
+			}
+		}
+	}
+
+	.menu-nav {
+		height: 78vh;
+		font-size: 1rem;
+	}
+
+	.menu-branding {
+		padding: 1.5rem;
+
+		.portrait {
+			// background: url('../img/portrait.jpg');
+			width: 10.5rem;
+			height: 10.5rem;
+			// background-size: cover;
+		}
+	}
+
+	.contact-form {
+		width: 100%;
+	}
+}
+
+// MEDIA QUERY FOR HORIZONTAL OREINTATION
+
+@include mediaHorizontalHeight {
+	main#home h1 {
+		padding-top: 1rem;
+		font-size: 5rem;
+		padding-left: 0rem;
+		padding-bottom: 0rem;
+	}
+
+	.myLogo {
+		display: none;
+	}
+
+	.icons {
+		margin-top: 0;
+	}
+}
+
+@include mediaHorizontal {
+	main#home h1 {
+		padding-top: 1rem;
+		font-size: 5rem;
+		padding-left: 0rem;
+		padding-bottom: 0rem;
+	}
+
+	.myLogo {
+		display: none;
+	}
+
+	.icons {
+		margin-top: 0;
+	}
+
+	.menu-nav {
+		height: 100vh;
+		width: 100vw;
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	.menu-branding {
+		display: none;
+	}
 }

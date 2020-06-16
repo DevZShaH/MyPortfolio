@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Contact Me</title>
     <script src="https://kit.fontawesome.com/ab7ebf8779.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/main.css">
@@ -11,7 +12,7 @@
 
 <body>
     <header>
-        <div class="menu-btn">
+            <div class="menu-btn" data-aos="fade-left" data-aos-anchor="#example-anchor" data-aos-easing="ease" data-aos-offset="0" data-aos-duration="2000">
             <div class="btn-line"></div>
             <div class="btn-line"></div>
             <div class="btn-line"></div>
@@ -38,7 +39,7 @@
                 </li>
                 <li class="nav-item current">
                     <a href="contact.html" class="nav-link">
-                        How To Reach Me
+                        Reach Out To Me
                     </a>
                 </li>
             </ul>
@@ -46,29 +47,64 @@
     </header>
 
     <main id="contact">
-        <h1 class="lg-heading">
-            Contact <span class="text-secondary">Me</span>
-        </h1>
-        <h2 class="sm-heading">
+        <div class="page-heading-h1" data-aos="fade-down">
+            <h1 class="lg-heading">Contact Me</h1>
+        </div>
+        <h2 class="sm-heading" data-aos="fade-up" data-aos-delay="500">
             This is how you can reach me...
         </h2>
-        <div class="boxes">
-            <div>
-                <span class="text-secondary">Email:</span> devzshah.ds@gmail.com
-            </div>
+        <div class="boxes" data-aos="flip-up">
             <div>
                 <span class="text-secondary">Phone:</span> (+977) 9840055534
             </div>
             <div>
-                <span class="text-secondary">Address:</span> Sahabhagita Marg, Mid-Banewshor,Kathmandu,Nepal
+                <span class="text-secondary">Email:</span> devzshah.ds@gmail.com
             </div>
+            <div>
+                <span class="text-secondary">Address:</span> Sahabhagita Marg, Mid-Banewshwor, Kathmandu, Nepal
+            </div>
+        </div>
+        <div class="contact-form">
+            <form action="POST" data-netlify="true">
+                <div class="fields">
+                    <div class="field half" data-aos="fade-right">
+                        <input type="text" name="name" id="name" placeholder="Name" />
+                    </div>
+                    <div class="field half" data-aos="fade-left" data-aos-delay="250">
+                        <input type="email" name="email" id="email" placeholder="Email" />
+                    </div>
+                    <div class="field" data-aos="zoom-in" data-aos-delay="350">
+                        <textarea name="message" id="message" placeholder="Your words are valuable to me..." rows="7"></textarea>
+                    </div>
+                    <div class="field add-file" data-aos="zoom-out" data-aos-delay="500" data-aos-offset="50" data-aos-once="true">
+                        <input type="file" name="myfile" id="myfile" placeholder="Upload File" rows="7" />
+                    </div>
+                    <div class="field">
+                        <div data-netlify-recaptcha="true"></div>
+                    </div>
+                </div>
+                <ul class="actions" data-aos="zoom-in-down" data-aos-delay="600" data-aos-offset="0" data-aos-once="true">
+                    <li>
+                        <input type="submit" value="Send Message" class="button primary">
+                    </li>
+                </ul>
+            </form>
         </div>
     </main>
     <footer id="main-footer">
-        Copyright &copy; 2020
+        &copy; <span class="span-year">span Year</span>. All Rights Reserved.
     </footer>
 
-    <script src="js/main.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1200, // values from 0 to 3000, with step 50ms
+            easing: 'ease',
+            anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
+        });
+    </script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>

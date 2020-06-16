@@ -4,14 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://kit.fontawesome.com/ab7ebf8779.js" crossorigin="anonymous"></script>
+    <title>About Me</title>
     <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
     <header>
-        <div class="menu-btn">
+        <div class="menu-btn" data-aos="fade-right" data-aos-anchor="#example-anchor" data-aos-easing="ease" data-aos-offset="0" data-aos-duration="2000">
             <div class="btn-line"></div>
             <div class="btn-line"></div>
             <div class="btn-line"></div>
@@ -38,7 +39,7 @@
                 </li>
                 <li class="nav-item">
                     <a href="contact.html" class="nav-link">
-                        How To Reach Me
+                        Reach Out To Me
                     </a>
                 </li>
             </ul>
@@ -46,46 +47,163 @@
     </header>
 
     <main id="about">
-        <h1 class="lg-heading">
-            About <span class="text-secondary">Me</span>
-        </h1>
-        <h2 class="sm-heading">
-            Let me tell you a few things...
+        <div class="page-heading-h1" data-aos="fade-down">
+            <h1 class="lg-heading">About Me</h1>
+        </div>
+        <h2 class="sm-heading" data-aos="fade-up" data-aos-delay="300">
+            Let me tell you few things...
         </h2>
-        <div class="about-info">
-            <img src="img/portrait.jpg" alt="Dev Sah" class="bio-image">
+        <div class="about-info" >
+            <img src="img/portrait.jpg" alt="Dev Sah" class="bio-image" data-aos="fade-right" data-aos-delay="400">
             <div class="bio">
-                <h3 class="text-secondary">BIO</h3>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur unde, totam quis commodi veniam ipsa accusamus sequi blanditiis ea! Iste porro beatae quos eaque, excepturi neque recusandae velit aut adipisci.
-                </p>
-            </div>
-            <div class="job job-1">
-                <h3>Web Shop</h3>
-                <h6>Full Stack Developer</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a natus rem facilis sunt fugit officiis sed debitis qui deserunt?                    
-                </p>
-            </div>
-            <div class="job job-2">
-                <h3>Designer</h3>
-                <h6>Web Designer</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a natus rem facilis sunt fugit officiis sed
-                    debitis qui deserunt?
-                </p>
-            </div>
-            <div class="job job-3">
-                <h3>Web Shop</h3>
-                <h6>Full Stack Developer</h6>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem a natus rem facilis sunt fugit officiis sed
-                    debitis qui deserunt?
+                <h3 class="text-secondary" data-aos="fade-down" data-aos-delay="750">BIO</h3>
+                <p data-aos="fade-left" data-aos-delay="500">
+                    Some might say that attempting to gain everything is the best way to lose everything. To the contrary, I would argue
+                    that if I’ve spent my life trying to gain everything, I never had anything to lose in the first place. The only thing that matters is the one that how can I live in people’s heart.
                 </p>
             </div>
         </div>
+        <!-- NEWLY ADDED CONTAINER FOR MY SKILLS ICONS -->
+        <!-- START of the container================================================================================-->
+        <section class="container">
+            <h3 class="skills-header" data-aos="flip-right">My Skills</h3>
+            <div class="skill-icons">
+                <div class="logo-with-name">
+                    <img src="img/logos/logo512.png" class="logo-img" alt="React" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">React</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/nodejs-logo.png" class="logo-img" alt="Node JS" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Node JS</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/JavaScript_logo-svg.png" class="logo-img" alt="JavaScript" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">JavaScript</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/express-js-png-logo.png" class="logo-img" alt="Express" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Express</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/mongoDB-logo.png" class="logo-img" alt="MongoDB" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Mongo DB</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/web-design-logo.png" class="logo-img" alt="Web Design" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Web Design</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/css-logo.png" class="logo-img" alt="CSS" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">CSS</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/HTML-5-logo.png" class="logo-img" alt="HTML" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">HTML</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/Git_icon.svg.png" class="logo-img" alt="Git" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Git</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/android.png" class="logo-img" alt="Android" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Android</h6>
+                </div>
+                <div class="logo-with-name">
+                    <img src="img/logos/java.png" class="logo-img" alt="Java" data-aos="zoom-in-down">
+                    <h6 class="logo-name" data-aos="zoom-in-up" data-aos-delay="200">Java</h6>
+                </div>
+            </div>
+        </section>
+        <!--=================================END of the container===================================================================================-->
+        
+
+        <!--============================== START OF CARD EFFECTS======================================================== -->
+        <div class="card-container">
+            <h3 class="skills-header" data-aos="flip-left">MY WORKING PROFILES</h3>
+            <div class="cards-boxes">
+                <div class="box" data-aos="zoom-out-right" data-aos-easing="linear" data-aos-duration="1000">
+                    <div class="imgBx">
+                        <img src="./img/aurora-candle-light.jpg" alt="MERN | FULL STACK DEVELOPER">
+                    </div>
+                    <div class="content">
+                        <h3 class="card-header" data-aos="fade-left" data-aos-delay="750" data-aos-offset="0">MERN | FULL STACK DEVELOPER</h3>
+                        <p>
+                            With the popularity of React flying high especially with its new hooks feature, I have been involved in several MERN stack as well as Full stack projects. All of these projects was done by taking in consideration of code optimization and code reusability. Some components based apps are also built by using context API and Redux, so that app performs better even on larger scale.
+                        </p>
+                    </div>
+                </div>
+                <div class="box" data-aos="zoom-in" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="500">
+                    <div class="imgBx">
+                        <img src="./img/aurora-candle-light.jpg" alt="WEB DESIGNER">
+                    </div>
+                    <div class="content">
+                        <h3 data-aos="fade-left" data-aos-delay="900" data-aos-offset="0">WEB DESIGNER</h3>
+                        <p>
+                            I have designed various attractive and eye-catching web pages and boilerplates that can help and accompanies in development of other web apps easily and faster. These webs apps are mostly designed and styled with JavaScript, CSS along with Saas and HTML. UI are designed with several animations, transition and transform properties that makes UI cool looking and responsive.
+                        </p>
+                    </div>
+                </div>
+                <div class="box" data-aos="zoom-out-left" data-aos-easing="linear" data-aos-duration="1000" data-aos-delay="300">
+                    <div class="imgBx">
+                        <img src="./img/aurora-candle-light.jpg" alt="MOBILE APP DEVELOPER">
+                    </div>
+                    <div class="content">
+                        <h3 data-aos="fade-left" data-aos-delay="1000" data-aos-offset="0">MOBILE APP DEVELOPER</h3>
+                        <p>
+                            I had built some native apps on android studio with Java as a programming languages. As a Major project in android, I've developed an Bill Splitter and Messaging App which can be used to share the expenses with friends, roomates or business partner. This app can also be used as a messaging and chatting with each other.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--============================== END OF CARD EFFECTS======================================================== -->
+
+        <!-- START OF NEWLY ADDED ABILITIES SECTION -->
+        <section class="abilities">
+            <h4 class="abilities-header center" data-aos="fade-down">Things that make me a better programmer </h4>
+            <div class="abilities-container grid-3 center">
+                <div data-aos="zoom-out-right" data-aos-offset="50">
+                    <i class="fas fa-user-clock fa-3x"></i>
+                    <h3 data-aos="zoom-out-left" data-aos-delay="350" data-aos-offset="50">Time/Task Management</h3>
+                </div>
+                <div data-aos="zoom-out-left" data-aos-offset="50">
+                    <i class="fas fa-laptop-code fa-3x"></i>
+                    <h3 data-aos="zoom-out-right" data-aos-delay="350" data-aos-offset="50">Problem Solver</h3>
+                </div>
+                <div data-aos="zoom-out-right" data-aos-offset="50">
+                    <i class="fab fa-leanpub fa-3x"></i>
+                    <h3 data-aos="zoom-out-left" data-aos-delay="350" data-aos-offset="50">Love To Learn</h3>
+                </div>
+                <div data-aos="zoom-out-left" data-aos-offset="50">
+                    <i class="fas fa-bullseye fa-3x" ></i>
+                    <h3 data-aos="zoom-out-right" data-aos-delay="350" data-aos-offset="50">Good Focus</h3>
+                </div>
+                <div data-aos="zoom-out-right" data-aos-offset="50">
+                    <i class="fas fa-users fa-3x"></i>
+                    <h3 data-aos="zoom-out-left" data-aos-delay="350" data-aos-offset="50">Team Player</h3>
+                </div>
+                <div data-aos="zoom-out-left" data-aos-offset="50">
+                    <i class="fas fa-assistive-listening-systems fa-3x"></i>
+                    <h3 data-aos="zoom-out-right" data-aos-delay="350" data-aos-offset="50">Listening to others</h3>
+                </div>
+            </div>
+        </section>
+        <!-- END OF NEWLY ADDED ABILITIES SECTION -->
+
     </main>
     <footer id="main-footer">
-        Copyright &copy; 2020
+        &copy; <span class="span-year">span Year</span>. All Rights Reserved.
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+                duration: 1200, // values from 0 to 3000, with step 50ms
+                easing: 'ease',
+                anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
+            });
+    </script>
+    <script src="js/about.js"></script>
 </body>
 
 </html>

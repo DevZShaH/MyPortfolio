@@ -1,155 +1,169 @@
 //Menu Button
 .menu-btn {
-    position: absolute;
-    z-index: 3;
-    right: 35px;
-    top: 35px;
-    cursor: pointer;
-    @include easeOut;
+	position: absolute;
+	z-index: 3;
+	right: 1.3rem;
+	top: 2rem;
+	cursor: pointer;
+	@include easeOut();
+	// new added css
+	transition: 0.4s;
 
-    .btn-line {
-        width: 28px;
-        height: 3px;
-        margin: 0 0 5px 0;
-        background: set-text-color($primary-color);
-        @include easeOut;
-    }
+	.btn-line {
+		width: 2.25rem;
+		height: 4px;
+		padding: 1.5px;
+		margin: 0 0 5px 0;
+		background: set-text-color($primary-color);
+		@include easeOut();
 
-    .btn-line {
+		// New added css
+		&:hover {
+			transform: scaleX(1.6);
+			background: -webkit-linear-gradient(left, #b223, #7579ff);
+		}
+	}
 
-        //Line-2-width decrease
-        &:nth-child(2) {
-            width: 20px;
-            height: 3px;
-        }
-    }
+	//HANDLING DOM UI WITH SCSS
+	//Rotate Into X With Menu Lines
+	&.close {
+		transform: rotate(180deg);
+		transition: 0.6s;
 
-    //HANDLING DOM UI WITH SCSS
-    //Rotate Into X With Menu Lines
-    &.close {
-        transform: rotate(180deg);
+		.btn-line {
+			//Line-1-Rotate
+			&:nth-child(1) {
+				transform: rotate(45deg) translate(5px, 5px);
+				height: 3px;
+			}
 
-        .btn-line {
+			//Line-2-Hide
+			&:nth-child(2) {
+				opacity: 0;
+			}
 
-            //Line-1-Rotate
-            &:nth-child(1) {
-                transform: rotate(45deg) translate(5px, 5px);
-            }
+			//Line-3-Rotate
+			&:nth-child(3) {
+				transform: rotate(-45deg) translate(6px, -6px);
+				height: 3px;
+			}
 
-            //Line-1-Hide
-            &:nth-child(2) {
-                opacity: 0;
-            }
-
-            //Line-1-Rotate
-            &:nth-child(3) {
-                transform: rotate(-45deg) translate(7px, -6px);
-            }
-        }
-    }
+			// New added css
+			&:hover {
+				background: -webkit-linear-gradient(left, #b223, #7579ff);
+			}
+		}
+	}
 }
 
-
-//MENU OVERLAY: i.e MENU view design 
+//MENU OVERLAY: i.e MENU view design
 
 .menu {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    // opacity: 0.8;
-    visibility: hidden; //hiding menu items at top 0 position
+	position: fixed;
+	top: 0;
+	width: 100%;
+	// opacity: 0.9;
+	visibility: hidden; //hiding menu items at top 0 position
 
-    &.show {
-        visibility: visible;
-    }
+	&.show {
+		visibility: visible;
+	}
 
-    &-branding,
-    &-nav {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        float: left;
-        width: 50%;
-        height: 100vh;
-        overflow: hidden;
+	&-branding,
+	&-nav {
+		display: flex;
+		flex-flow: column wrap;
+		align-items: center;
+		justify-content: center;
+		float: left;
+		width: 50%;
+		height: 100vh;
+		overflow: hidden;
+	}
 
-    }
+	&-nav {
+		margin: 0;
+		padding: 0;
+		background: darken($primary-color, 3);
+		list-style: none;
+		transform: translate3d(0, -100%, 0);
+		@include easeOut();
 
-    &-nav {
-        margin: 0;
-        padding: 0;
-        // background: darken($primary-color, 3);
-        background: rgba(darken($primary-color, 5), 0.9);
-        list-style: none;
-        transform: translate3d(0, -100%, 0);
-        @include easeOut;
+		&.show {
+			//Slide in from top
+			transform: translate3d(0, 0, 0);
+		}
+	}
 
-        &.show {
-            //Slide in from top
-            transform: translate3d(0, 0, 0);
-        }
-    }
+	&-branding {
+		// background: $primary-color;
+		background: rgba($primary-color, 0.8);
+		transform: translate3d(0, 100%, 0);
+		@include easeOut();
 
-    &-branding {
+		&.show {
+			//Slide in from bottom
+			transform: translate3d(0, 0, 0);
+		}
 
-        // background: $primary-color;
-        background: rgba($primary-color, 0.9);
-        transform: translate3d(0, 100%, 0);
-        @include easeOut;
+		.portrait {
+			width: 250px;
+			height: 250px;
+			background: url('../img/portrait.jpg');
+			border-radius: 50%;
+			border: solid 3px $secondary-color;
+			background-size: cover;
+			box-shadow: 0 0 10px #04567c, 0 0 15px rgb(142, 103, 214), 0 0 30px #380238;
+		}
+	}
 
-        &.show {
-            //Slide in from bottom
-            transform: translate3d(0, 0, 0);
-        }
+	.nav-item {
+		transform: translate3d(600px, 0, 0);
+		@include easeOut();
 
-        .portrait {
-            width: 250px;
-            height: 250px;
-            background: url('../img/portrait.jpg');
-            border-radius: 50%;
-            border: solid 3px $secondary-color;
-            background-size: cover;
-        }
-    }
+		&.show {
+			//Slide in from right
+			transform: translate3d(0, 0, 0);
+		}
 
-    .nav-item {
-        transform: translate3d(600px, 0, 0);
-        @include easeOut;
-
-        &.show {
-            //Slide in from right
-            transform: translate3d(0, 0, 0);
-        }
-
-        &.current>a {
-            color: $secondary-color;
-        }
-    }
-
-    .nav-link {
-        display: inline-block;
-        position: relative;
-        font-size: 30px;
-        text-transform: uppercase;
-        padding: 1rem 0;
-        font-weight: 200;
-        color: set-text-color($primary-color);
-        ;
-        text-decoration: none;
-        @include easeOut;
-
-        &:hover {
-            color: $secondary-color;
-        }
-    }
-
+		&.current > a {
+			font-weight: 500;
+			background: -webkit-linear-gradient(180deg, #ddd, #380238, #076b99, #d41f55);
+			-webkit-background-clip: text;
+			background-clip: text;
+			background-size: 400%;
+			-webkit-text-fill-color: transparent;
+			filter: drop-shadow(5px 5px linear);
+		}
+	}
+	.nav-link {
+		display: inline-block;
+		position: relative;
+		font-size: 30px;
+		text-transform: uppercase;
+		padding: 1rem 0;
+		color: set-text-color($primary-color);
+		text-decoration: none;
+		@include easeOut();
+		// new added css
+		transition: 0.6s;
+		&:hover {
+			background: -webkit-linear-gradient(180deg, #ddd, #380238, #076b99, #d41f55);
+			-webkit-background-clip: text;
+			background-clip: text;
+			background-size: 400%;
+			-webkit-text-fill-color: transparent;
+			filter: drop-shadow(5px 5px linear);
+			// new added css
+			@include easeOut();
+			transform: scale(1.1);
+			font-weight: 400;
+		}
+	}
 }
-
-
-//DELAY For Each nav Item slide by 0.1s
+// DELAY For Each nav Item slide by 0.1s
 @for $x from 1 through 4 {
-    .nav-item:nth-child(#{$x}) {
-        transition-delay: $x *0.1s;
-    }
+	.nav-item:nth-child(#{$x}) {
+		transition-delay: $x *0.1s;
+	}
 }
