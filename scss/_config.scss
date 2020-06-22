@@ -2,7 +2,7 @@ $primary-color: rgba(206, 176, 253, 0.959);
 $secondary-color: #770d77;
 
 $show-home-image: true;
-$home-image: url(../img/Resizer_15916729430740.jpg);
+$home-image: url(../img/beautiful-scene.jpg);
 $background-opacity: 0.85;
 
 @mixin easeOut {
@@ -19,6 +19,8 @@ $background-opacity: 0.85;
 			top: 0;
 			left: 0;
 			z-index: -1;
+			// background: url(../img/beautiful-scene.jpg);
+			background: $home-image;
 			background-size: cover;
 			background-repeat: no-repeat;
 			background-position: center;
