@@ -206,6 +206,7 @@ h3 {
   h2.lg-heading,
   h3.lg-heading {
     font-size: 5rem;
+    font-weight: normal;
     padding-top: 3rem;
     padding-left: 1rem;
     text-shadow: 0 19px 38px rgba(161, 127, 127, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -352,7 +353,7 @@ main {
     font-size: 1.5rem;
     margin: auto; }
     .about-info .bio p {
-      font-weight: 100; }
+      font-weight: 200; }
 
 .container {
   display: flex;
